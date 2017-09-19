@@ -29,86 +29,15 @@
   {% endif %}
 
   <div{{ content_attributes.addClass('content') }}>
-   <!-- {{ content }} -->
-
-</br>
-{% if node.field_date1.value %} 
-<h3>Date field value</h3>
-</br>
-{{ content.field_date1.value|date("m/d/Y") }}
+   page template test <h1>{{ node.title.value }}</h1>
+   
+   {% if node.field_hide_image.value == '1' %}
+   <div class="image">
+{{ content.field_image1 }}
+   </div>
 {% endif %}
-
-</br>
-</br>
-
-
-</br>
-<h3>plain text field value</h3>
-</br>
-    {% if node.field_plain_text_field.value == "hello" %}
-      <p>Plain text field has value hello</p>
-    {% else %}
-      <p>plain text field does not have value hello</p>
-    {% endif %}
-
-</br>
-</br>
-
-<h3>List text field value</h3>
-</br>
-    {% if node.field_list_text_field.value == "car" %}
-      <p>The value is Car</p>
-    {% else %}
-      <p>The value is Bike</p>
-    {% endif %}
-
-</br>
-</br>
-
-<h3>Boolean field value</h3>
-</br>
-    {% if node.field_boolean_field.value == '1' %}
-      <p>The value is Yes</p>
-    {% else %}
-      <p>The value is No</p>
-    {% endif %}
-
-</br>
-</br>
-
-<h3>Term reference field value</h3>
-</br>
-{{ content.field_term_reference }}
-</br>
-</br>
-
-{% if node.field_term_reference.entity.label == "bass" %}
-      <p>The value is Bass</p>
-    {% else %}
-      <p>The value is Gold</p>
-    {% endif %}
-
-</br>
-</br>test1
-{{ content.field_multi_term_reference }}
-</br>test2
-{% if node.field_multi_term_reference.entity.label == "bass" and "finch" %}
-      <p>The value is Bass and Finch</p>
-    {% else %}
-      <p>The value is Other</p>
-    {% endif %}
-
-
-</br>test555
-{{ content.field_term_reference }}
-</br>
-{% if node.field_term_reference.target_id == '1' %}
-      <p>The value is Bass</p>
-    {% else %}
-      <p>The value is Other</p>
-    {% endif %}
-
-
-</div>
+   
+   
+  </div>
 
 </article>

@@ -764,7 +764,7 @@ $settings['file_scan_ignore_directories'] = [
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $databases['default']['default'] = array (
-  'database' => 'd851',
+  'database' => 'd847',
   'username' => 'root',
   'password' => 'apple',
   'prefix' => '',
