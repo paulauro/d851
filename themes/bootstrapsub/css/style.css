@@ -9,6 +9,50 @@
 padding: 5px;
 }
 
+.sm 
+{
+height: 200px;
+width: 200px;
+}
+
+.sm img {
+
+}
+
+
+
+.md
+{
+height: 400px;
+width: 400px;
+
+}
+
+.person
+{
+height: 428px;
+width: 370px;
+}
+
+.personnew
+{
+float: left;
+}
+
+.right
+{
+float: right;
+}
+
+.recall
+{
+padding-bottom: 20px;
+}
+
+.md img {
+
+}
+
 .test1 img{
 
 }

@@ -31,6 +31,7 @@
   <div{{ content_attributes.addClass('content') }}>
 
 
+<div class="container">
 
 {% if node.field_global_media_options.value == 'article' %}
   <div class="row">
@@ -50,11 +51,21 @@
 
 {% if node.field_global_media_options.value == 'person1' %}
   <div class="row">
-  <img src="{{ file_url(content.field_global_image|field_target_entity.image.entity.uri.value | image_style('person_portrait'))}} " >
+  <div class="person">
+  {{ content.field_global_image }}
+  </div>
   </div>
 {% endif %}
 
 </br>
+
+</br>
+
+{% if node.field_global_media_options.value == 'person1' %}
+  <div class="row">
+  <img src="{{ file_url(content.field_global_image|field_target_entity.image.entity.uri.value | image_style('person_portrait'))}} " >
+  </div>
+{% endif %}
 
 {{ content.body }}
 
@@ -93,10 +104,34 @@
 
 {% if node.field_global_media_options.value == 'recall' %}
   <div class="row">
-  {{ content.field_global_image }}
+{% for key, item in content.field_global_image  if key|first != '#' %}
+  <div class="recall">{{ item }}</div>
+{% endfor %}
   </div>
 {% endif %}
 
+   </br>
+
+{% if node.field_global_media_options.value == 'sm' %}
+  <div class="row">
+  <div class="sm">
+  {{ content.field_global_image }}
+  </div>
+  </div>
+{% endif %}
+
+   </br>
+
+{% if node.field_global_media_options.value == 'md' %}
+  <div class="row">
+  <div class="md">
+  {{ content.field_global_image }}
+  </div>
+  </div>
+{% endif %}
+
+
+  </div>
 
 
 

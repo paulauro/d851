@@ -1,0 +1,63 @@
+{%
+  set classes = [
+    node.bundle|clean_class,
+    node.isPromoted() ? 'is-promoted',
+    node.isSticky() ? 'is-sticky',
+    not node.isPublished() ? 'is-unpublished',
+    view_mode ? view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+<article{{ attributes.addClass(classes) }}>
+
+  {{ title_prefix }}
+  {% if not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {% if display_submitted %}
+    <footer>
+      {{ author_picture }}
+      <div{{ author_attributes.addClass('author') }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
+
+  <div{{ content_attributes.addClass('content') }}>
+
+
+<div class="container">
+<div class="col-lg-12 col-md-12 col-sm-12">
+
+<div class="row">
+
+
+{% if node.field_global_media_options.value == 'personnew' %}
+
+  <div class="personnew">
+  {{ content.field_person }}
+  </div>
+  
+{% endif %}
+
+
+
+
+<div class="right">
+{{ content.body }}
+</div>
+
+
+</div>
+</div>
+</div>
+
+
+  </div>
+
+</article>
