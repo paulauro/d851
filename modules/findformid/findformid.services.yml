@@ -1,0 +1,6 @@
+services:
+  findformid.twig.images:
+    #arguments: ['@renderer']
+    class: Drupal\findformid\TwigExtension\Images
+    tags:
+      - { name: twig.extension }

@@ -1,0 +1,21 @@
+name: ced013a5
+# core: 8.x
+type: module
+package: Lightning
+hidden: true
+dependencies:
+  - lightning_media_image
+  - lightning_page
+# version: '8.x-2.16'
+
+# Information added by Drupal.org packaging script on 2017-07-05
+# version: '8.x-2.16'
+# core: '8.x'
+# project: 'lightning'
+# datestamp: 1499286713
+
+# Information added by Drupal.org packaging script on 2017-07-05
+version: '8.x-2.16'
+core: '8.x'
+project: 'lightning'
+datestamp: 1499286713

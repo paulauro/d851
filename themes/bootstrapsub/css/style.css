@@ -1,0 +1,30 @@
+/**
+ * This file will be overwritten when the Bootstrap Framework source files
+ * are compiled using the LESS CSS pre-processor.
+ */
+
+
+.test1{
+
+padding: 5px;
+}
+
+.test1 img{
+
+}
+
+
+ul.mylist {
+
+}
+
+
+
+}
+
+.container{
+   padding-right: 35px;
+   padding-left: 35px;
+   max-width: 1300px;
+   width: auto;
+}

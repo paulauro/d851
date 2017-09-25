@@ -1,0 +1,5 @@
+name: add box
+description: 'add box'
+type: module
+core: 8.x
+package: Custom

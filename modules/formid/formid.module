@@ -1,0 +1,6 @@
+<?php
+
+function formid_form_alter(&$form, $form_state, $form_id) {
+drupal_set_message($form_id);
+// other codes
+}
