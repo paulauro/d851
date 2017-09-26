@@ -4,9 +4,21 @@
  */
 
 
+
+
+
 .test1{
 
 padding: 5px;
+}
+
+.big2{
+height: 350px;
+width: 350px;
+}
+.big2 img{
+height: 350px;
+width: 350px;
 }
 
 .sm 
@@ -23,7 +35,7 @@ width: 200px;
 
 .md
 {
-height: 400px;
+height: auto;
 width: 400px;
 
 }

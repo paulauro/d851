@@ -36,13 +36,29 @@
 
 <div class="row">
 
+{% if node.field_media_options_person.value == 'big' %}
+  <div class="row">
+  {{ content.field_global_image }}
+  </div>
+{% endif %}
+
+</br>
+
+{% if node.field_media_options_person.value == 'big2' %}
+  <div class="row">
+<div class="big2">
+  {{ content.field_global_image }}
+</div>
+  </div>
+{% endif %}
+
+</br>
+
 
 {% if node.field_global_media_options.value == 'personnew' %}
-
   <div class="personnew">
   {{ content.field_person }}
   </div>
-  
 {% endif %}
 
 
