@@ -23,8 +23,9 @@ width: 350px;
 
 .sm 
 {
-height: 200px;
-width: 200px;
+margin: auto;
+height: auto;
+width: 300px;
 }
 
 .sm img {
@@ -35,8 +36,9 @@ width: 200px;
 
 .md
 {
+margin: auto;
 height: auto;
-width: 400px;
+width: 650px;
 
 }
 
