@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains entity_usage.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function entity_usage_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the entity_usage module.
+    case 'help.page.entity_usage':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Track usage of entities referenced by other entities.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_modules_installed().
+ */
+function entity_usage_modules_installed($modules) {
+  if (in_array('entity_usage', $modules)) {
+    drupal_set_message(t('The module entity_usage will track all entity usages from this moment on.<br />If you want to have statistics for the existing entities, you need to do so on the @link page',
+      ['@link' => \Drupal::service('link_generator')->generate('Bulk Update', Url::fromRoute('entity_usage.batch_update'))]
+    ));
+  }
+}
+
+/**
+ * Implements hook_entity_insert().
+ */
+function entity_usage_entity_insert(EntityInterface $entity) {
+  \Drupal::service('entity_usage.entity_update_manager')->trackUpdateOnCreation($entity);
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function entity_usage_entity_update(EntityInterface $entity) {
+  \Drupal::service('entity_usage.entity_update_manager')->trackUpdateOnEdition($entity);
+}
+
+/**
+ * Implements hook_entity_predelete().
+ */
+function entity_usage_entity_predelete(EntityInterface $entity) {
+  return \Drupal::service('entity_usage.entity_update_manager')->trackUpdateOnDeletion($entity);
+}

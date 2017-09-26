@@ -1,0 +1,14 @@
+entity_usage.usage_list:
+  path: '/admin/content/entity-usage/{type}/{id}'
+  defaults:
+    _controller: 'Drupal\entity_usage\Controller\ListUsageController::listUsagePage'
+    _title_callback: 'Drupal\entity_usage\Controller\ListUsageController::getTitle'
+  requirements:
+    _permission: 'access entity usage statistics'
+entity_usage.batch_update:
+  path: '/admin/config/entity-usage/batch-update'
+  defaults:
+    _form: 'Drupal\entity_usage\Form\BatchUpdateForm'
+    _title: 'Batch Update'
+  requirements:
+    _permission: 'perform batch updates entity usage'
